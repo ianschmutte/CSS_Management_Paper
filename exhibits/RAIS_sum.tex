@@ -1,0 +1,31 @@
+% IM Schmutte
+% RAIS_sum.tex
+% Summary table of estimated components from AKM estimation
+%SOURCE: E:\Dropbox\MGMT_source\data\_dev\programs\prepare\04.03.RAIS_descriptive_statistics.sas (lst)
+
+\begin{table}[h t]										
+    \begin{center}									
+    \caption{Summary of RAIS 2003--2013 \label{tab:rais_sum}}										
+        \begin{tabular}{l r r}										
+            \toprule
+                Variable & Mean Std.\ & Dev. \\
+            \midrule
+                Log Wage	        & $1.65$	& $0.69$  \\
+                Log Monthly Earn.	& $6.87$	& $0.67$  \\
+                White	            & $0.59$	& $0.49$  \\
+                Male                & $0.64$	& $0.48$  \\
+                Age	                & $33.24$	& $10.59$  \\
+                age $\le$ 30	        & $0.48$	& $0.50$  \\
+                age $\ge$ 50	        & $0.09$	& $0.28$  \\
+                Work Hours          & $43.12$	& $2.58$  \\
+                Hours $\ge$ 35        & $0.98$	& $0.13$  \\
+            \bottomrule
+        \end{tabular}
+    \end{center}
+    \footnotesize{Notes: Summary statistics of the RAIS data used to estimate the AKM decomposition. 
+    The data are a worker-year panel constructed from the raw RAIS job-year files. We assign workers to the job with highest reported earnings over the year.
+    We also drop all worker-year observations where the number of reported jobs is greater than 2.
+    We drop jobs with fewer than 30 contracted hours per week, jobs in the public sector, jobs in plants with fewer than 5 workers, and jobs with missing data
+    on tenure or earnings. The final number of observations is $N = 353,141,951$.}
+\end{table}										
+							
