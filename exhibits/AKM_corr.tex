@@ -1,0 +1,29 @@
+% Ian M. Schmutte
+% AKM_corr.tex
+% This version: 4 Aug 2018
+% Correlation table of estimated components from AKM estimation
+%SOURCE: Dropbox\MGMT_source\data\_dev\programs\prepare\03.01.post_CG_data_read.lst
+
+
+\begin{table}[h t]
+	\caption{Correlation among log wage components from AKM model: RAIS 2003--2013 \label{tab:AKM_corr}}
+	\begin{center}
+	\begin{tabular}{c l k k k k k k k}																					
+		\toprule																					
+			&		&		&		&	\multicolumn{5}{c}{Component Correlations}													\\ \cline{5-9} \noalign{\smallskip}
+		Component	&	Label	                                &	\m{Mean}	&	\m{Std. Dev.}	&	\m{$Y$}	&	\m{$X\hat{\beta}$}	&	\m{$\hat{\theta}$}	&	\m{$\hat{\psi}$}	&	\m{$\hat{\varepsilon}$}	\\	
+		\midrule
+		$Y$	&	Log wage 	                                    &	1.649	&	0.687	&	1.000	&		    &		    &  		    &		    \\	
+		$X\hat{\beta}$	&	Time varying characteristics$^\dag$	&	0.137	&	0.215	&	0.192	&	1.000	&		    &		    &    		\\	
+		$\hat{\theta}$	&	Worker effect	                    &	0.000	&	0.485	&	0.797	&  -.166	&	1.000	&		    &   		\\	
+		$\hat{\psi}$	&	Firm effect             	        &	0.000	&	0.296	&	0.663	&	-.009	&	0.332	&	1.000	&			\\
+		$\hat{\varepsilon}$	&	Sample residual	                &	0.000	&	0.209	&	0.304	&	0.000	&	0.000	&	0.000	&	1.000	\\
+		\bottomrule
+	\end{tabular}
+	\end{center}
+	\footnotesize{Notes: Observation-weighted correlations among the variance components of log wages estimated from the AKM model described in Equation \eqref{eq:AKM_full}}
+
+\end{table}
+
+	
+
