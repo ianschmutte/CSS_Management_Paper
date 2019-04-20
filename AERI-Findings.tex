@@ -1,0 +1,86 @@
+% Last updated, 14 Jan 19
+% %!TEX root=MGMT.tex
+%\noindent Overview of findings.
+
+% EXHIBIT 1
+\subsection{More productive firms hire higher quality workers}
+% 1. Overview of lnsales regressions, WMS-RAIS-PIA matched data --> appendix B for details
+To document the relationship between productivity and worker quality we match input and output data from PIA to our WMS manufacturing firms and estimate production functions for log sales, including the overall management practices score and our measures of worker quality across occupations. In addition to factor inputs (capital, labor and materials), we control for industry sub-sector and family or founder ownership.  Table \ref{tab:e1_prodfcn} reports the results.  
+
+% Exhibit 1, columns (1)-(3)
+We first present baseline specifications excluding the factor inputs in Columns (1) and (2). In line with \citet{Bender:Management:NBER:2016}, higher management scores --- that is, structured management processes --- strongly predict sales, and, conditional on management practices, so does overall worker quality. Adding the factor inputs in Column (3) reduces the estimated coefficient of overall worker quality to .076, and the management score coefficient to a similar-magnitude 0.088, though both are still significant at the 1\% level. 
+
+% Exhibit 1, columns (4)-(6)
+Next, we disaggregate overall worker quality into our separate measures for managerial and production layers in Columns (4) through (6).%
+\footnote{Disaggregating causes us to lose about 14 percent of the sample because of missing data on worker type.} Worker quality at both levels matters for productivity, but the variation loads to a much greater degree on the manager fixed effects relative to the worker fixed effects: the manager quality coefficient estimate of .078 is more than twice that of production workers. The results in Column (5) show that the results are robust to controlling for the share of workers with a college degree, an often-used proxy for worker quality. In Column (6) we include the AKM firm quality fixed effect, which renders the relationship between average production worker quality and sales is no longer significant. The structured management measure and the AKM manager quality measures, however, are still significant --- though the coefficients decrease slightly. These results are consistent with previous findings that mangers within an organization are primarily responsible for value generation, and it also suggests that much of the important variation in production worker quality is happening \textit{within firms}, rather than between firms. %Is this right?? Should we cite Song et al and some of their findings here?
+%Although they are not able to precisely identify managers, these findings closely parallel the results \citet{Bender:Management:NBER:2016} report for Germany. 
+
+\subsection{Firms with structured management hire the top and shed the bottom}
+% 1. Structured and unstructured management practices
+We have established that worker quality --- especially manager quality --- is important for productivity. Next, we examine the hiring, retention and firing activity of the firms in our sample, distinguishing those with structured personnel management practices from those with unstructured practices. The personnel management score reflects a firm's processes for managing talent, evaluating performance, dealing with low performers, retaining and promoting high performers, and sustaining a distinctive employee value proposition. %As discussed above, firms with structured practices are have a personnel management score of at least 3. 
+
+\subsubsection{Hiring practices}
+ 
+% 3. Firms with structured practices always have a greater share of high-quality workers and a lower share of low-quality workers
+% Exhibit 2 - panel (a)
+Figure \ref{fig:hiring_lorenz} plots the ranked distributions of managers (panel A) and production workers (panel B), depicting the positive hiring outcomes in firms with structured management relative to firms with unstructured management practices. If the pool of all hires was fixed, but those hires were randomly allocated between structured and unstructured firms (proportional to their respective shares of hiring activity), both curves would sit on the 45 degree line. In reality, we see that the curve for firms with structured management practices in place falls to the right of the 45-degree line, while firms with unstructured management practices fall slightly to the left of the 45-degree line. 
+
+For example, the median manager working in a firm with unstructured management practices is in the 46th percentile of the overall manager quality distribution. In contrast, the median manager working in a firm with structured management practices was hired from the 58th percentile of the overall manager quality distribution. For production workers, the pattern is even starker. The median production worker hired into an unstructured management practices firm is in the 49th percentile of the overall occupation's distribution --- effectively a random draw. The median production worker in a firm with structured management, however, is drawn from the 56th percentile of the overall distribution. 
+
+ \subsubsection{Retention practices}
+% 2. Retention/stayers set-up
+After hiring from the top of the distribution, firms need to ensure they can keep their high quality employees in the firm. We observe the ``stayers'' in our data by classifying job-year observations that do not start or end in that year as a ``retained'' employee. Further, we rank workers based on the distribution of estimated worker effects ($\hat\theta_i$) by year, and categorize them into ``high-quality''  and ``low-quality'' workers if $\hat\theta_i$ is above the 80th or below the 20th percentile, respectively. Figure~\ref{fig:stayer_shares} shows the ten-year pattern of the shares of employees in each rank of quality, as well as type of firms (structured or unstructured management practices). Firms with structured management practices consistently capture almost twice the share of managers and production workers from the top of the distribution of worker quality. The slight movement in the pattern for production workers after 2007 can be partly explained by the loss in overall employment share by unstructured firms over time; from 2003 to 2013, the employment share of firms with unstructured management fell by about 7 percentage points, effectively all of which was picked up by firms with structured management.\footnote{Figure~\ref{fig:emp_shares} in the Appendix depicts the pattern.} As employees at the bottom of the quality distribution are more likely to suffer a job separation, some of these employees are being hired by the expanding structured management firms.
+
+% 4. Relative employment growth of structured-practices firms
+% Figure \ref{fig:emp_shares} displays the employment-share series for each tercile. MOVE TO APPENDIX
+%These patterns suggest that firms using structured personnel management are growing relative to firms that are not, and the data on industry employment shares confirm it.  We construct terciles of the personnel management score, and assign to each job-year record the tercile of the employing establishment and calculate the share of employment in each tercile by year. The employment share of top-tercile firms rose from .30 to .38 between 2003 and 2013, while the employment share of bottom-tercile firms fell from .36 to .29.  The employment share of middle-tercile firms held roughly constant between .33 and .35.
+
+% 5. The retention advantage is reinforced in firing
+% Exhibit 4
+\subsubsection{Selective dismissal practices}
+
+Previous work with employer-employee matched datasets use transitions in and out of jobs, but do not record the reason for job separations. This is problematic as workers who quit are inherently different from those who are fired. Our data is unique in that it includes the reason for separation, allowing us to identify jobs that ended due to firing.%
+\footnote{Specifically, we define a separation as a firing if it was recorded as an ``employer-initiated termination without just cause.'' We can also include as fires jobs reported to end due to ``employer-initiated terminations with just cause,'' but these constitute an extremely small number of terminations.}
+Figure \ref{fig:firing_rate} presents binned scatter plots of firing rates for managers and production workers by worker quality, distinguishing between firms with structured and unstructured practices.%
+\footnote{Specifically, we plot the residuals from regressions of a firing indicator and the worker effects ($\hat\theta_i$s) on a set of dummies for sex, race, year, and completed education.  Each bin represents two percent of the observations and the figure plots the bin-specific means.}
+Two features of the data stand out: first, firms with structured personnel management practices have lower firing rates throughout the worker-quality distribution. This could be evidence of better matching earlier in the employee's job cycle. Second, for a given firing rate, a structured-practices firm sheds workers of lower quality than firms with unstructured practices, suggesting that firm without structured practices firms make more mistakes in firing. The slopes of the graphs further suggest that the mistakes may more pronounced  in the upper part of the quality distribution.
+
+\subsection{Organizational mechanisms driving better labor market matches} 
+% 6. Overview of worker-quality regressions
+The patterns depicted in Figures \ref{fig:hiring_lorenz}, \ref{fig:stayer_shares} and \ref{fig:firing_rate} provide new evidence that structured personnel practices are important for building a stable, high-quality workforce. We quantify and characterize this relationship in Table \ref{tab:zpe_mgmt}, documenting the relationship between worker quality and structured management practices. We go beyond previous work and decompose the average structured management measure into its components, and focus on occupation-specific worker quality for managers and production workers separately. All specifications include firm and industry controls. 
+
+% SHOULD WE INCLUDE A REGRESSION HERE??
+
+% 7. Production worker findings
+% 	 Exhibit 5, production workers
+First, consider the results for production workers. Column (1) suggests that one standard deviation higher structured personnel management practices are associated with 0.1 standard deviation higher production worker quality. Column (2) suggests a similar relationship between the operations management index and production worker quality. When we include both indices in Column (3), it is clear that the people management index explains most of the conditional variation in production worker quality; in fact, the coefficient is very similar in magnitude to the unconditional correlation. Column (4) disaggregates the people management index into its six components identified in the WMS, and find that the component that absorbs most of the variation is the measure of how much the firm's practices ``instill a talent mindset''. The topic measures whether firms make hiring high-quality workers a top priority and whether there are structures in place to reward senior managers according to the talent pool they build. 
+ 
+% SHOULD WE DO A JOINT SIGNIFICANCE TEST FOR COL 4 AND 8?
+ 
+% 	 Exhibit 5, managers
+Turning our focus to the managers, Columns (5)-(8) repeat the specifications in the first four columns. As in the case of production workers, both personnel and operations management practices are unconditionally correlated with higher worker quality, although the unconditional operations index is larger for managers. %Can we say that they are statistically different?
+%
+When we include both indices, we find the opposite relationship relative to production workers. For managers, the operations management index absorbs most of the variation and is significant at the 1\% level, while the conditional relationship of the people management index with manager quality is a fairly tight zero. The relationship between the operations management index is robust to decomposing the people management index, though the same ``talent mindset'' variable is also marginally significant for manager quality, as for production worker quality. 
+
+The relationships we uncovered are new, though intuitive. They suggest that structured people management practices are important for building a stock of high quality production workers --- this makes sense, as many of the managerial structures the index encompasses are primarily aimed at the level of the production worker. The reverse relationship when considering managerial quality suggests that structured operations practices possibly facilitate matches with better managerial talent, as better managers prefer working in environments where there are structured operations practices in place (though of course, we cannot rule out reverse causality).  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

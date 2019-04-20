@@ -1,0 +1,40 @@
+% Last updated:
+% 2 Jan 17 - CC
+%!TEX root=MGMT.tex
+
+The empirical analysis is broken into two parts. In the first, we estimate a decomposition of the log wage following \citet{Abowd1999} and \citet{abowd2002} to measure the wage-tenure profile at each establishment, allowing also for an establishment-specific intercept at zero tenure. In the second step, we match data from establishments included in the WMS for Brazil and characterize the relationship between stated management practices on one hand, and observed compensation practices on the other.
+
+	% \subsection{Decomposition of Log Wages}
+	We estimate the following decomposition of log earnings on the full RAIS sample:
+		\begin{equation}
+		\label{eq:AKM_full}
+		y_{it} = \alpha + x_{it}\beta + \theta_i +\psi_{J(i,t)} +\gamma_{1J(i,t)}s_{it} +\gamma_{2J(i,t)}s_{it}^2 + \varepsilon_{it}.
+		\end{equation}
+	\noindent
+	This is the now-familiar decomposition introduced in \citet{Abowd1999}. In the widely-used version of this decomposition, establishment-specific heterogeneity enters as an intercept shift. That is, $\gamma_{1}$ and $\gamma_{2}$ are assumed to be zero. \citet{Abowd1999} observed that differences in the internal labor management practices of firms would also be reflected in the employer-specific wage-seniority profile. Because our goal is to compare the compensation practices revealed in the earnings data with stated management practices, we allow for a quadratic wage-tenure profile that varies across establishments.
+
+	In  \ref{eq:AKM_full}, $y_{it}$ is the log monthly wage of worker $i$ at time $t$, $x_{it}$ is a vector of $K$ observed time-varying worker characteristics, $s_{it}$ is years of tenure, and $\varepsilon_{it}$ is a mean-zero error. The $\theta_i$  are unobserved worker effects and $J(i,t)$ indicates that the dominant job of worker $i$ in year $t$ is with establishment $j=J(i,t)$. As in \citet{Abowd1999}, the employer-specific contribution to pay is $\psi_{J(i,t)} +\gamma_{1J(i,t)}s_{it} +\gamma_{2J(i,t)}s_{it}^2$. A newly-hired worker, with seniority $s_{it}=0$, receives an employer-specific wage premium of $\psi_{J(it)}$. In what follows, $N$ and $J$ denote the number of workers and firms, and $N^*$ denotes the number of worker-year observations. In our empirical analysis, the $x_{it}$ contains indicators for educational attainment and a cubic in labor-market experience interacted with race and gender.
+
+	We hasten to point out that we do not interpret the establishment-specific wage-tenure profile as a measure of variation in the ``returns'' to tenure. Rather, it is a measure of the conditional correlation between wages and tenure as they vary in the observed data across establishments. These could reflect many different underlying mechanisms, including differences across firms in the speed of learning about match quality, responsiveness to changes in outside labor market opportunities, or differences in the use of deferred compensation. Our present purpose is to characterize the extent of heterogeneity in compensation across employers and its relationship, if any, to stated management practices. \citet{Abowd2006} and \citet{Buchinsky2010} present structural methods for controlling the endogeneity of tenure in estimating employer wage-tenure profiles and returns to tenure in a matched data setting. 
+
+	 
+	Defining $Y$ as a stacked vector of the $N^*$ observations of log earnings, we rewrite \eqref{eq:AKM_full} as
+		\begin{equation}
+		\label{eq:AKM_mat}
+		Y = X\beta +D\theta + F\psi + F_1\gamma_1 +F_2\gamma_2 +\varepsilon,
+		\end{equation}
+	where $X$ is $N^* \times K$ (including the intercept), $D$ and $F$ are $N^* \times N$ and $N^* \times J$ design matrices of worker and firm dummy variables, and $F_1$ and $F_2$ are the direct products of $F$ with $N^* \times 1$ vectors with elements given by $s_{it}$ and $s_{it}^2$. We compute the exact solution to the least-squares dummy variable model using the preconditioned conjugate gradient algorithm as proposed by \citet{abowd2002}. 
+	\citet{abowd2002} show that the firm and worker effects, $\theta$ and $\psi$, are separately identified within connected components of the ``realized mobility network,'' $g =1,\cdots,G$. With $G$ connected components, identification requires $G$ linear restrictions on worker and firm effects. We follow their example of setting the average person and group effect in the largest group to zero after identifying the grand mean of the regression. In the remaining groups, we allocate $\lambda = \frac{1}{2}$ of the group mean to both the worker effect and the firm effect. 
+
+
+	% \subsection{Compensation Practices to Management Practices}
+	From the RAIS sample, we prepare an establishment-level panel. The variables in the establishment panel include establishment-year specific summaries of demographic characteristics, average tenure, along with the separation and hiring rate for the firm. We also include summaries of the estimated components of the earnings decomposition.  We use these data to examine the relationships among establishment-specific compensation, employment outcomes, and the composition of the workforce.  For those plants which we can match to the WMS, we are able to further examine how compensation practices are associated with plant management and, for a subset of observations, with labor productivity.
+
+	%   Together these measures of turnover represent important human resource management objectives which pay policies are presumably designed to influence. This exercise involves regressing each component of turnover on the estimated starting pay and seniority profile coefficients as follows:
+	% 	\begin{equation}
+	% 	\label{eq:HRM_reg}
+	% 	h_{j} = a_{k0}\hat\psi_j + b_{k1}\hat\gamma_{1j} + b_{k2}\hat\gamma_{2j} + Z_j\delta_k + \upsilon_{jk},
+	% 	\end{equation}
+	% \noindent where $h_{jk}$ is either the hire, fire or quit rate at firm $j$ (where $k$ indexes the turnover variables), and $Z_j$ contains measures of firm size, skill intensity, industry affiliation and ownership status.  
+
+	% First, we estimate simple, bivariate regressions of $h_{jk}$ on each estimated pay structure coefficient, $\hat\psi_j$, $\hat\gamma_{1j}$ and $\hat\gamma_{2j}$ separately. These simple regressions serve as a benchmark for the results from \eqref{eq:HRM_reg}, in which their effects are estimated jointly.  Second, we estimate \eqref{eq:HRM_reg} with the variables in $Z$ omitted, and then with the controls included.  Finally, to gauge how the relationship between pay policies and turnover vary with market forces, we estimate \eqref{eq:HRM_reg} separately by ownership status: for-profit private sector, state-owned, non-profit and sole proprietorship.

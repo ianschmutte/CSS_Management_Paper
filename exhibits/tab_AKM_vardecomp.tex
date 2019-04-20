@@ -1,0 +1,30 @@
+%Ian M. Schmutte
+% 2018 Aug 4
+%source /projects/schmutte/MGMT/MGMT_source/data/_dev/programs/prepare/02_run_CG/CG_est_twfe_exp_normalized.(m,log)
+
+\begin{table}
+  \label{tab:AKM_vardecomp}
+  \small 
+   \caption{Decomposition of Variance in Log Wages: RAIS 2003-2013}
+   \begin{center}
+      \begin{tabular}{lrr}
+      \toprule            
+              
+                                       & Variance & Share \\
+                                      &Component & of Total \\
+\midrule
+      Total Variance of Log Wage              & $ 0.472$   &    $100.0$             \\  
+      Variance Component:                     &            &                 \\ 
+      ~~~$Var(\text{Worker Effect~}\theta)$   & $ 0.235$   &   $ 49.8\% $     \\
+      ~~~$Var(\text{Estab. Effect~} \psi)$    & $ 0.088$   &   $ 18.5\% $    \\
+      ~~~$Var(X\beta)$                        & $ 0.046$   &   $ 9.7\% $    \\
+      ~~~$Var(\text{Residual})$               & $0.044$    &   $ 9.2\% $    \\
+      ~~~$2\times Cov(\theta,\psi)$           & $0.095$    &   $20.2\%$           \\
+      ~~~$2\times Cov(X\beta,\theta)$         & $-0.034$   &   $-7.3\%$           \\
+      ~~~$2\times Cov(X\beta,\psi)$           & $-.001$    &   $-.00\%$           \\
+  \bottomrule
+   \end{tabular}
+   \end{center}
+   \label{tab:AKM_vardecomp}
+   \footnotesize{Notes: Share of variance in log wages explained by components estimated from the AKM model described in Equation \eqref{eq:AKM_full}.}
+\end{table}       

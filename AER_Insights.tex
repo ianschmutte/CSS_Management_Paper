@@ -1,0 +1,151 @@
+% Chris Cornwell, Ian M. Schmutte, Daniela Scur
+% v1.0 
+% Last updated, 5 Aug 18
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt]{article}
+%TCIDATA{OutputFilter=Latex.dll}
+
+	\input{./formats}  %packages, special commands, environments defined here
+	% \input{./tcilatex} %pulls in TCILATEX macros in case someone used SciWord.
+
+%------------- Edit at your own risk ---
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pagestyle{plain}                     %%
+%%%%%%%% EXACT 1in MARGINS %%%%%%%%%%%%%
+\setlength{\textwidth}{6.5in}     %%  %%
+\setlength{\oddsidemargin}{0in}   %%  %%
+\setlength{\evensidemargin}{0in}  %%  %%
+\setlength{\textheight}{8.75in}   %%  %%
+\setlength{\topmargin}{0in}       %%  %%
+\setlength{\headheight}{0in}      %%  %%
+\setlength{\headsep}{0in}         %%  %%
+\setlength{\footskip}{.5in}       %%  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%-------------------- Special Commands-------------------------------
+	%to make the table numbering with Roman numerals
+	\renewcommand{\thetable}{\Roman{table}}
+
+	%try to eliminate the stupid * for \thanks in titlepage
+	\renewcommand\footnotemark{}
+
+%-------------------- Document information---------------------------
+	\newcommand{\mytitle}{How Structured Personnel Management Practices Lead to a Productive Workforce}
+	\newcommand{\myshorttitle}{Structure management practices}
+	\newcommand{\myshortauthors}{Cornwell, Schmutte, and Scur}
+	\newcommand{\myauthors}{Chris M.\ Cornwell \and Ian M.\ Schmutte \and Daniela Scur}
+	\newcommand{\myversion}{\today}
+	\newcommand{\RAISDisclaimer}{
+		}
+	\newcommand{\mythanks}{\noindent We use the Brazilian employer-employee dataset (RAIS) data under an agreement with the \emph{Minist\'{e}rio do Trabalho e Emprego} (MTE), Brazil's labor ministry, which collects and maintains RAIS. We thank Carlos Lessa at the Brazilian statistics agency (IBGE) for access to the Brazilian industrial survey data (PIA). We thank participants at the LERA Session at ASSA 2017 and the Empirical Management Conference 2018 for useful discussions and comments. %
+		}
+%LERA Session at ASSA 2017, Ekaterina Roshchina, Lisa Kahn, Christos Makridis, Nick Bloom, John van Reenen, Rafaella Sandun
+
+%--------------------------------------------------------------------
+
+% Daniela's packages - feel free to edit if need be or if it screws anything up
+
+% Ensuring the accents are added
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Making the links blue - personal choice, happy to change it if people don't like it!
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	anchorcolor=black,
+	citecolor=blue,
+	urlcolor=blue
+}
+
+\usepackage{pdflscape}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+% section section_name (end)
+
+%%%%%%%%%%%%
+%Title Page
+%%%%%%%%%%%%
+    \makeatletter
+	\begin{titlepage}
+		\begin{center}
+			\MakeUppercase{\mytitle} \\ [2cm]
+			\begin{tabular}{c@{\hskip .25in}c@{\hskip .25in}c}
+			Christopher Cornwell   	  & Ian M.\ Schmutte 		  & Daniela Scur			   \\
+			Department of Economics   & Department of Economics   & Sloan School of Management \\
+			Terry College of Business & Terry College of Business & MIT        				   \\
+			University of Georgia 	  & University of Georgia 	  & dscur@mit.edu              \\
+			cornwl@uga.edu			  & schmutte@uga.edu          &                            \\
+			\end{tabular} \\ [1cm]
+			\myversion \blfootnote{\mythanks} \\  [1cm]
+		\end{center}
+
+		\singlespacing
+		\small
+		\input{AERI-Abstract}
+	\end{titlepage}
+	% \makeatother
+	% \maketitle
+
+	% ------------------------------ Main Document Body-----------------
+    \onehalfspacing 
+    \section{Introduction} 
+    \label{sec:introduction}
+    \input{AERI-Introduction_v20190410}
+	
+	\section{Empirical Setting} 
+	\label{sec:setting}
+	\input{AERI-Setting}
+
+%	\section{Wage Decomposition and Worker Quality} 
+%	\label{sec:wage decomposition}
+%	\input{AERI-WageDecomposition}
+
+	\section{Results} 
+	\label{sec:findings}
+	\input{AERI-Findings}
+
+	\section{Conclusion} 
+	\label{sec:conclusion}
+	\input{AERI-Conclusion}
+
+	% ------------------------------ Bibliography-----------------------
+	\newpage
+	\bibliographystyle{dcu}
+	\bibliography{../../../../references/bib/MGMT}
+
+	% ------------------------------ Main Results-----------------------
+	\clearpage
+	\section*{Tables and Figures}
+	\label{app:tables_figures}
+	\input{AERI-TablesAndFigures}
+	
+
+	% ------------------------------ Appendix --------------------------
+\clearpage
+\begin{center}
+{\bf Appendix for Cornwell, Schmutte, and Scur ``\mytitle,'' \today}
+\end{center}
+
+
+% \noindent The full manuscript is available at 
+% \href{http://www.kurtlavetti.com/CDEM_vc.pdf}{http://www.kurtlavetti.com/CDEM\_vc.pdf}. Please contact the authors at \href{mailto:lavetti.1@osu.edu}{lavetti.1@osu.edu} or \href{mailto:schmutte@uga.edu}{schmutte@uga.edu} with comments or for additional information.
+
+	\appendix 
+	% \singlespacing
+	\setcounter{table}{0}
+	\setcounter{figure}{0}
+	\pagenumbering{arabic}\renewcommand{\thepage}{App.~\arabic{page}}
+	\renewcommand\thetable{\Alph{section}.\arabic{table}}
+	\renewcommand\thefigure{\Alph{section}.\arabic{figure}}
+	\renewcommand\theequation{\Alph{section}.\arabic{equation}}
+	\input{./AERI-appendix}
+
+\end{document}
+

@@ -1,0 +1,122 @@
+% !TeX root = ./AER Insights.tex
+% Last updated:
+% 6 Aug 18- CC
+
+
+% EXHIBIT: PRODUCTIVITY TABLE
+% \clearpage
+
+\input{./exhibits/e1}
+
+% \begin{table}
+% 	\caption{Correlates of Production Worker and Manager Quality} \label{tab:zpe_mgmt}
+% 	\scalebox{0.8}{
+% 		\singlespace
+% 		\small
+% 			\subcaption{PANEL A: TITLE HERE}
+% 			\input{exhibits/e5_panelA.tex}
+% 			\\ ~
+% 			\subcaption{PANEL B: TITLE HERE}
+% 			\input{exhibits/e5_panelB.tex}
+% 		% \tablenotes
+% 		{\textbf{Notes:} ADD NOTES HERE. ADD DEP VAR MEAN TO THE BOTTOM OF THE TABLE.}
+% 	}
+% 	\end{table}
+
+
+
+%EXHIBIT: HIRING DISTRIBUTION CONDITIONAL ON STRUCTURED vs. UNSTRUCTURED
+\clearpage
+	\begin{figure}[h]
+		\centering
+		\caption{Quality distribution of newly hired managers and production workers}
+		\label{fig:hiring_lorenz}
+		\begin{subfigure}[b]{1\textwidth}
+		  \centering
+		  \caption{Managers}
+		  \includegraphics{./exhibits/fig_hiring_lorenz_mngr}
+		\end{subfigure}
+		\ \\
+		\begin{subfigure}[b]{1\textwidth}
+		  \centering
+		   \caption{Production workers}
+		  \includegraphics{./exhibits/fig_hiring_lorenz_labr}
+		\end{subfigure}
+		
+	\end{figure}
+
+% EXHIBIT: EMPLOYMENT SHARES BY WORKER QUALITY FOR STRUCTURED AD UNSTRUCTURED PROCESS FIRMS
+\clearpage
+	\begin{figure}[h]
+		\centering
+		\caption{Quality distribution of managers and production workers in continuing jobs}
+		\label{fig:stayer_shares}
+		\begin{subfigure}[b]{0.9\textwidth}
+		  \centering
+		  \caption{Managers}
+		  \includegraphics{./exhibits/fig_stayer_shares_mngr}\
+		\end{subfigure}
+		\ \\
+		\begin{subfigure}[b]{0.9\textwidth}
+		  \centering
+		  \caption{Production workers}
+		  \includegraphics{./exhibits/fig_stayer_shares_labr}
+		\end{subfigure}
+	\end{figure}
+
+% EXHIBIT: BIN SCATTERS OF FIRING RATES FOR MANAGERS AND PRODUCTION WORKERS
+\clearpage
+	\begin{figure}[ht]
+		\centering
+		\caption{Firing rates for managers and production workers by worker quality}
+		\fbox{\includegraphics{./exhibits/fig_firing_binscatter}}
+		\label{fig:firing_rate}
+	\end{figure}
+	
+% EXHIBIT 5: TABLE 
+\clearpage
+\begin{landscape}
+	\begin{table}
+	\caption{Relationship between Worker and Management Quality} \label{tab:zpe_mgmt}
+	\begin{center}
+%	\scalebox{0.8}{
+		\singlespace
+		\small
+		\input{exhibits/e5.tex}
+%}
+	\end{center}
+\footnotesize{\textbf{Notes:} Results of linear regressions projecting plant-level averages of worker quality (estimated AKM worker effects) onto measures of management. 
+In columns (1)--(4), the dependent variable is the average quality of production workers.
+In columns (5)--(8), the dependent variable is the average quality of managers.
+All models control for the log of employment, the year of observation (either 2008 or 2013), two-digit industry codes, the share of unionized workers, firm age, and whether the firm is multinational. 
+In columns (1)--(3) and (5)--(7), the regressors of interest are the standardized measures of operations management and people management. In columns (4) and (8), the regressors of interest are the six subcomponents of the people-management measure. These measure the extent of structured management practices with respect to: (i) instilling a talent mindset; (ii) building a high-performance culture; (iii) making room for talent; (iv) developing talent; (v) creating a distinctive employee value proposition; (vi) retaining talent. For details of these different measures, see \citet{bloom_qje2007} and \citet{wms_jeea}.}
+	\end{table}
+\end{landscape}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

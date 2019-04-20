@@ -1,0 +1,75 @@
+% Last updated:
+% 10 Apr 2019, CC
+%!TEX root=MGMT.tex
+
+The empirical setting for our analysis combines three datasets covering Brazilian firms: RAIS, which provides essential information on workers and their jobs; the WMS, which contributes our measures of management practices; and Annual Industrial Survey (\textit{Pesquisa Industrial Anual - PIA}), our source for firm input and output data.
+
+\subsection{Occupation, employment history and worker quality: RAIS}
+% 1. What RAIS provides
+For every formal sector job, RAIS reports the employee's monthly earnings, occupation, hours of work, education, gender and race, along with the firm's industry and municipality. With the occupation data, we are able to distinguish managers from production workers. Importantly for our purposes, it also records the date of hire, month and year of separation, and reason for separation, and, for new hires, whether the job is their first registered employment.
+
+%\subsubsection{Wage decomposition and worker quality}
+%\label{sec:wage decomposition}
+
+% 2. Worker-firm RAIS panel and worker quality
+The RAIS data are also the basis for our measure of worker quality, which we define as the value of the skills a worker takes from job to job.  We isolate the contribution of these skills as the estimated worker effect from an AKM-style wage decomposition.  For the wage decomposition, we use the 2003-2013 waves and construct a sample of employees who are contracted to work at least 30 hours per week, have least one month of tenure and have complete set of covariates. We exclude workers in sole-proprietorships, establishments with only one employee, and observations beyond the top and bottom 0.01 percent of the wage distribution. These restrictions leave us with 353,141,951 unique worker-firm-year observations consisting of 96,499,697 unique workers and 4,433,492 unique establishments. Appendix \ref{app:EmpiricalDetails} provides details of the sample construction and summary statistics on the workers that comprise it.
+% We need a cleaner mapping of this subsection to Appendix A and Table C.1.  Table C.1 does not literally provide summary statistics on the wage decomp variables as indicated in v1.1, e.g., experience is missing.  It is more an overview of the analysis sample, which is how it is described above.
+% Workers are identified based upon their 16-digit PIS/PASEP numbers. As is standard, we restrict attention to the worker’s “dominant” job – their highest paying job during a given year.
+% Need some new sentences to describe the multiple job possibilities in the current sample.
+% NOTE - About 99% of people (PIS codes) are associated with 1 or 2 contracts per year (we have this in a SAS log). I'm just restricting analysis to cover all jobs for people with 2 jobs or less (along with the rest of our sample restrictions)
+% *INSERT updated observation figures below.
+% From CG_est_twfe_exp_normalized.log
+% Starting Breadth-First Search to Count Components
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Graph structure: I=96499697. J=4433492. Number of edges=161879895.
+% Done finding connected components. Mopping up singletons.
+% From 01.02.RAIS_prep_for_CG.lst
+% % Number of observations: 353141951
+
+% 3. Measuring worker quality
+\input{AERI-WageDecomposition}
+
+% 4. Firm-level worker quality
+We compute a firm-level worker-quality measure by averaging the estimated $\theta_i$ across worker occupations. In the WMS firms, roughly 5 percent of the employees hold managerial positions and the remaining 95 percent fill production jobs.\footnote{This is consistent with the WMS responses which indicate the average share of managers in a firm is 4.88 percent.} Average worker quality measures for managers in these firms is almost twenty times that of production workers.  However, manager quality is also more variable, with a standard deviation of 0.389 compared with 0.305 for production workers. Figure \ref{fig:pe_kdensity} compares compares the manager and production-worker quality distributions.
+
+%see 01.01.analysis.log lines 93--96 10/26/2018
+%     Variable |        Obs        Mean    Std. Dev.       Min        Max
+% -------------+---------------------------------------------------------
+%      pe_labr |        957    .0231546    .3046809  -.4973489   1.428571
+%      pe_mngr |        953    .4064845    .3894263  -.4746531   2.733089
+
+	
+\subsection{Structured management practices: WMS}
+
+
+% 1. Brief WMS overview
+\subsubsection{Measuring management: the WMS survey methodology}
+As described in \citet{bloom_qje2007}, the WMS project constructs measures of management practices from responses of senior plant managers on a set of 18 key practices. A third of these practices relate specifically to the ``people'' or personnel management practices that directly relate to hiring, retention and dismissal decisions. We follow (\citet{lemos_ej}) and group the other 12 practices, which concern lean operations, monitoring and target-setting, into a single operations index.  Responses are scored from 1 (``worst practice) to 5 (``best practice''), indicating the degree to which formal processes are in place. 
+%a score of 1 indicates no formal or informal practices; 2 indicates some informal practices are in place; 3 indicates formal practices in place but with weaknesses; 4 indicates solid formal practices and 5 represents stable best practices. A high score implies that a firm has adopted a series of \textit{structured} management practices, which are associated with improvements in productivity \citep{bloom_india2012}.\footnote{See \citet{wms_jeea} for a survey.}
+%A score of 3 and above indicates that there are some formal processes in place, while a score of 2 and below implies that only informal processes are in place, which are followed only if individual manager responsible for carrying them out is present. 
+For example, consider the personnel practice of ``instilling a talent mindset'', which we find to be the most important for building a high-quality workforce.  Here, 1 implies that ``senior management does not communicate that attracting, retaining and developing talent throughout the organization is a top priority,'' while 5 means that ``senior managers are evaluated and held accountable on the strength of the talent pool they actively build.'' So, in this case, the ``best'' practice involves \textit{formal} accountability and performance evaluation processes \textit{structured} around a manager's contribution to workforce quality.
+
+We use standardized averages of overall, personnel and operations practices in our analyses that call for continuous measures.\footnote{Specifically, we standardize each of the 18 questions, average over each index (overall, personnel and operations management) and standardize again.} For qualitative analyses, we follow the WMS scoring guide and distinguish between firms with at least some formal structures in place (scores of 3 or above) and those with none (scores of 2 or below). We use this conceptual divide to classify our firms as having ``structured practices'' (meaning \textit{formal processes}) or ``unstructured practices'' (meaning \textit{informal processes}). 
+
+%Previous work with the WMS data has focused on using the standardized average of the 18 management practices scores, and we follow this convention in our regression analyses that focus on the continuous measure of structured management.\footnote{Specifically, we standardize each of the 18 questions, average across each index (overall management, operations and people management) and standardize again. We also follow the more recent convention (\citet{lemos_ej}) of grouping the 12 operations questions --- formally lean operations, monitoring and target setting questions --- and the 6 people management questions into two separate indices, rather than using four separate indices.} We use the average management practices score (all 18 topics), as well as a sub-index for only the ``people management'' questions (6 topics) and one for the ``non-people management'' questions (12 topics). In our figures, we depart from the data-driven approach to determining cut-offs and use a methodology-driven approach that focuses on the implicit meaning of the management scores when they were being awarded to firms during the data collection. In the WMS scoring guide, a score of 3 and above implies that there are at least some formal structures in place, while a score of 2 and below implies that while there may be a process in place, it is entirely informal and it would not be carried out if the individual manager who led it was not present. We use this conceptual divide to classify our sample into firms that have ``structured management'' (meaning \textit{formal processes}) and ``unstructured management'' (meaning \textit{informal processes}). We choose this nomenclature to avoid confusing informal processes with the informal sector, which is a large and important part of the Brazilian economy.
+
+\subsubsection{Matched RAIS-WMS sample}
+
+%Figures in first two pars should align with Table C.2. Table should collapse management indices to the two we use. 
+There are 763 unique firms in the Brazilian sample of the WMS: 227 surveyed in 2008 only, 228 surveyed in 2013 only, and 308 surveyed in 2008 and 2013. Of the 763 firms, 694 can be matched to our RAIS sample for at least one year (213 in 2008, 214 in 2013 and 267 in both years), yielding 961 total observations between 2008 and 2013.\footnote{Employees are matched to their employers through a code assigned by the \textit{Cadastro Nacional da Pessoa Jur\'{i}dica} (CNPJ), which also allows a match to the WMS and PIA. Of the 763 WMS firms, 745 have valid CNPJ identifiers.} 
+
+The average firm has 600 employees over than three production sites, with three layers between the CEO and shop floor. In the typical firm, only 13 percent of all workers have a university degree, while 73 percent of managers do. Over 75 percent of firms have at least five competitors and more than 60 percent are first or second generation family firms.  Only a fifth of firms are multinational corporations. Table \ref{tab:wms_summ} provides the full descriptive statistics for the matched RAIS-WMS firms.
+
+Relative to the other 35 countries in the WMS database, Brazilian firms rank in the lower-middle range overall management-score distribution. The average overall management score for the Brazilian firms is 2.67, with a standard deviation of approximately 0.6, implying that they have some structured practices in place, but most are informal and idiosyncratic to a particular manager rather than part of a standard operating procedure for the entire firm. When compared with the overall management score, Brazilian firms perform worse (2.52) in personnel management and better (2.78) in operations management.
+
+%When considering the two large groupings of the WMS index, those practices relating to people management and those relating to operations and monitoring-type practices, we see slightly diverging patterns. The operations average score is the average of the 12 operations-based questions, including adoption of lean manufacturing processes, monitoring of key performance indicators and target-setting. Brazilian firms score on average 2.78 on this set of practices, with a standard deviation of 0.74. This suggests firms have formal processes with regular follow-up, but that for many firms such practices are not a part of the culture of the organization and communication between managers and workers is limited. Further, Brazilian firms appear to focus more on the short-term targets and mainly address relatively narrow operational or financial indicators, without consistently communicating to workers how their efforts translate into hitting the targets.
+
+% The people management score, in contrast, is the average of the 6 people management questions, including how to evaluate employees and deal with poor and good performers. The average score is 2.52, with a standard deviation of 0.58. This suggests that the typical Brazilian firm has a basic performance review of its employees, but the review does not help the manager clearly identify the best and worst performers. Consequently, performance pay is does not make sharp distinctions and promotions tend to be based on tenure. Well-defined processes for discharging poor performers and recruiting and retaining productive workers are uncommon.
+
+%We believe this is a more appropriate distinction in our context, as we are concerned with types of personnel practices that either have set rules in place (``formal'') versus those that simply follow some informal norms or none at all. Using this concept-based cutoff instead of a sample-based one, we can also offer interpretations of our results that anchored in clear differences in management quality. Our qualitative results are not dependent on using this particular cutoff. %need to show this
+% Given that the scoring grid of the WMS is set, our results can be cleanly interpreted between the practices that score below a 3 and those that score above a 3.
+
+\subsection{Firm output and inputs: PIA}
+
+PIA (\textit{Pesquisa Industrial Anual}), the Annual Industrial survey conducted by Brazilian statistics agency (\textit{Instituto Brasileiro de Geografia e Estatistica - IBGE}), provides the data for linking management practices to firm productivity. PIA collects information on firm revenue, employment and materials expenditure. The survey does not produce a direct measure of capital stock, but one is estimated by the Brazilian economic research institute, \textit{Instituto de Pesquisa Econ\^omica Avan\c{c}ada} (IPEA), and made available to researchers who have been granted microdata access by IBGE. 
+%\textbf{Do we need to include some summary statistics for this? Or is it irrelevant?}

@@ -1,0 +1,42 @@
+% !TeX root = ../AER Insights.tex
+%tab_prodfcn_2008_old.tex
+%Ian M. Schmutte
+% 2018-10-29
+% Uses results from C:\Users\schmutte\Dropbox\MGMT_source\output\IBGE\tables\ly_collapse.tex
+
+\begin{table}[h t]
+  \caption{Production Function Estimates: WMS-RAIS-PIA Matched Data} \label{tab:e1_prodfcn}
+  \begin{center}
+\begin{tabular}{lcccccc}
+    \toprule
+\textbf{Dependent variable: ln(sales)}                                  	& (1)      & (2)       & (3)       & (4)     & (5) & (6)  \\
+    \midrule\
+\textbf{Management score} \\
+z-management                  &0.213*** & 0.168*** & 0.088*** & 0.065***& 0.064***& 0.059***  	\\
+                                  	&(0.039) 	& (0.039) 	& (0.02)   	& (0.01)    & (0.01)    & (0.01)    		\\
+\textbf{AKM quality measures} \\
+z-worker quality           &	  	& 0.247***	& 0.076*** &           	&           	&           		\\
+                                  	&	  	& (0.039)   	& (0.02)     &           	&          	& 			\\
+~ ~ z-production worker quality   &       	&          	& 		& 0.031**  & 0.028*   & 0.010     	\\
+                                  	&	 	&          	& 		& (0.02)    & (0.02)    & (0.02)    		\\
+~ ~ z-manager quality       &       	&          	& 		& 0.078*** & 0.076***& 0.053***  	\\
+                                  	& 		& 		&          	& (0.02)    	& (0.02)    	& (0.02)    \\
+z-firm quality               	&          	&           	&           	&		&		& 0.098***  \\
+                                  	&          	&           	&           	& 		&		& (0.02)    \\	
+\textbf{Firm characteristics} \\
+Share workers with college degree & &           	& 		& 		& 0.05      	& 0.05      \\
+                                  	& 		&          	& 		& 		& (0.10)    & (0.10)    \\
+\midrule
+Factor inputs	 		& 		& 	 	& Y 		& 	Y 	& 	Y	& Y \\
+Industry				& Y 		& 	Y 	& Y 		& 	Y 	& 	Y	& Y \\
+Ownership			& Y 		& 	Y 	& Y 		& 	Y 	& 	Y	& Y \\
+\# Observations              	& 775 	& 775 	& 773      & 663       & 663       & 663    \\
+\# Firms                          	& 679 	& 679 	& 679      & 594       & 594       & 594    \\
+$R^2 $                            	& 0.753 	& 0.796 	& 0.96     & 0.97      & 0.97      & 0.97      \\
+\bottomrule
+\end{tabular}
+\end{center}
+\footnotesize{Notes: Results from OLS regressions of log sales onto the variables described. In addition to the
+reported variables, the estimated models also include: industry dummies, and the log of capital, raw materials, and the number of employees. The data are prepared by merging the WMS, RAIS, and PIA samples for years 2008 and 2013.
+  }
+\end{table}

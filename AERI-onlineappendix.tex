@@ -1,0 +1,216 @@
+
+\subsection{Data Description}
+We describe our three distinct data sources here as well as the details associated with linking them together. First, we describe the matched employer-employee data from \ac{RAIS}. Second, we describe our data on management practices from the \ac{WMS}. Third, we describe our data on firm output and non-labor inputs from the \ac{PIA}. Finally, we describe our the linked datasets used in our analysis.
+
+\subsection{Wage Decomposition Details}
+
+
+\input{../../../tables/tab_AKM_vardecomp}
+\input{../../../tables/AKM_corr}
+
+\subsection{Productivity Analysis}
+
+\begin{figure}[h]
+\centering
+\fbox{\includegraphics{../figures/mgmtscor_hist}}
+\caption{Distribution of firm management z-score from WMS }
+\label{fig:mgmtscor_hist}
+\end{figure}
+
+
+\begin{landscape}
+% \newpage
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.4\textwidth]{../figures/fe_mgmt_summ}
+\caption{plant-specific starting pay effect by plant management z-score}
+\label{fig:mgmt_v_fe}
+\end{figure}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.4\textwidth]{../figures/pe_mgmt_summ}
+\caption{worker-specific effect by plant management z-score}
+\label{fig:mgmt_v_fe}
+\end{figure}
+\end{landscape}
+
+\clearpage
+\begin{figure}[h]
+\centering
+\includegraphics{../figures/fe_v_sales}
+\caption{Log sales per worker by plant-specific starting wage premium, $\hat{\psi}$}
+\label{fig:fe_v_sales}
+\end{figure}
+
+% EMPLOYMENT SHARES FIGURE
+\begin{figure}[h]
+	\centering
+	\fbox{\includegraphics{./exhibits/fig_emp_shares}}
+	\caption{Employment shares by management tercile, 2003-2013}
+	\label{fig:emp_shares}
+\end{figure}
+
+
+
+\begin{landscape}
+%\scalebox{0.95}{
+	\begin{table}
+	\caption{Difference in means between WMS-RAIS merged firms and non-WMS firms, 50+ employees} \label{tab:wms_diff_50}
+	\small
+	\singlespace
+	\input{../tables/wms_rais_diff}
+	\tablenotes{\textbf{Notes:} This table compares the firms in the WMS sample and the overall RAIS sample for firms with more than 50 employees. The WMS sample from 2008 is a random sample of firms between 100-5000 workers, and the 2013 sample was stratified to include 20\% of firms in the 50-99 employees category and the remaining 80\% of the sample in the 100-5000 sample.}
+	\end{table}
+%}
+\end{landscape}
+
+\clearpage
+\begin{landscape}
+%\scalebox{0.95}{
+	\begin{table}
+	\caption{Difference in means between WMS-RAIS merged firms and non-WMS firms, 100+ employees} \label{tab:wms_diff_100}
+	\small
+	\singlespace
+	\input{../tables/wms_rais_diff_100p}
+	\tablenotes{\textbf{Notes:} This table compares the firms in the WMS sample and the overall RAIS sample for firms with more than 50 employees. The WMS sample from 2008 is a random sample of firms between 100-5000 workers, and the 2013 sample was stratified to include 20\% of firms in the 50-99 employees category and the remaining 80\% of the sample in the 100-5000 sample. }
+	\end{table}
+	%}
+\end{landscape}
+
+	\begin{table}
+	\caption{RAIS, Orbis and interviewed sample differences: key variable means}
+	\small
+	\singlespace
+	\center
+	\hline
+	~ \\
+	\textbf{2008}
+	\input{../tables/sf_compare2008} \\
+	~ \\
+	\textbf{2013}
+	\input{../tables/sf_compare2013}
+	\tablenotes{\textbf{Notes:} This table includes all firms in the RAIS sampling frames, and compares RAIS key variables across the sample of firms that (a) are only in RAIS and not in the Orbis universe ("Not in Orbis"); (b) are in RAIS/Orbis universes but not in the WMS sampling frame ("Not in frame"), (c) are in RAIS/Orbis universes and in the WMS random sample of firms but were not selected to be in , and (d) are in the RAIS/Orbis universes, in the WMS sample. The ``plant size category'' comes from RAIS, and ``5'' indicates firms with between 50--99 employees. Code ``6'' indicates 100--249. Code ``7'' indicates 250--499. Code ``8'' indicates 500--999. Code ``9'' indicates firms with 1000 or more employees.}
+	\end{table}
+
+
+\begin{landscape}
+\begin{table}
+	\caption{Worker FE (mean) vs management}
+	\label{tab:zpe}
+	\small
+	\singlespace
+	\center
+\scalebox{0.9}{	
+	\input{../../data/analysis/output/tables/zpe.tex}} \\
+	~ \\
+	\tablenotes{\textbf{Notes:} *** indicates significance at the 1\% level, ** at the 5\% level, and * at the 10\% level. All standard errors are clustered by plant. Management score, production worker average fixed effect, and manager average fixed effect are standardized. All columns control for industry. In addition, the indicated columns also control for state, private ownership, number of competitors, union share, firm age, share male, average work hours, share white, and whether the firm is a multinational.  }
+	
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}
+	\caption{Worker FE Production Workers vs management}
+	\label{tab:zpe_prod}
+	\small
+	\singlespace
+	\center
+\scalebox{0.75}{	
+	\input{../../data/analysis/output/tables/zpe_labr.tex}} \\
+	~ \\
+	\tablenotes{\textbf{Notes:} *** indicates significance at the 1\% level, ** at the 5\% level, and * at the 10\% level. All standard errors are clustered by plant. Management score, production worker average fixed effect, and manager average fixed effect are standardized. All columns control for industry. In addition, the indicated columns also control for state, private ownership, number of competitors, union share, firm age, share male, average work hours, share white, and whether the firm is a multinational.  }
+	
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}
+	\caption{Worker FE Managers vs management}
+	\label{tab:zpe_mngr}
+	\small
+	\singlespace
+	\center
+\scalebox{0.7}{	
+	\input{../../data/analysis/output/tables/zpe_mngr.tex}} \\
+	~ \\
+	\tablenotes{\textbf{Notes:} *** indicates significance at the 1\% level, ** at the 5\% level, and * at the 10\% level. All standard errors are clustered by plant. Management score, production worker average fixed effect, and manager average fixed effect are standardized. All columns control for industry. In addition, the indicated columns also control for state, private ownership, number of competitors, union share, firm age, share male, average work hours, share white, and whether the firm is a multinational.  }
+	
+\end{table}
+\end{landscape}
+
+
+\clearpage
+\begin{landscape}
+\begin{table}
+	\caption{Firm FE vs management}
+	\label{tab:zfe}
+	\small
+	\singlespace
+	\center
+\scalebox{0.9}{	
+	\input{../../data/analysis/output/tables/zfe.tex}} \\
+	~ \\
+	\tablenotes{\textbf{Notes:} *** indicates significance at the 1\% level, ** at the 5\% level, and * at the 10\% level. All standard errors are clustered by plant. Management score, production worker average fixed effect, and manager average fixed effect are standardized. All columns control for industry. In addition, the indicated columns also control for state, private ownership, number of competitors, union share, firm age, share male, average work hours, share white, and whether the firm is a multinational. }
+	
+\end{table}
+\end{landscape}
+
+
+\clearpage
+%\begin{landscape}
+\begin{table}
+	\caption{Manager FE vs people management}
+	\label{tab:zpe_mngr_ppl}
+	\small
+	\singlespace
+	\center
+\scalebox{0.9}{	
+	\input{../../data/analysis/output/tables/zpe_mngr_ppl.tex}} \\
+	~ \\
+	\tablenotes{\textbf{Notes:} *** indicates significance at the 1\% level, ** at the 5\% level, and * at the 10\% level. All standard errors are clustered by plant. Management score, production worker average fixed effect, and manager average fixed effect are standardized. All columns control for industry. In addition, the indicated columns also control for state, private ownership, number of competitors, union share, firm age, share male, average work hours, share white, and whether the firm is a multinational. }
+	
+\end{table}
+
+
+\clearpage
+%\begin{landscape}
+\begin{table}
+	\caption{Production worker FE vs people management}
+	\label{tab:zpe_labr_ppl}
+	\small
+	\singlespace
+	\center
+\scalebox{0.9}{	
+	\input{../../data/analysis/output/tables/zpe_labr_ppl.tex}} \\
+	~ \\
+	\tablenotes{\textbf{Notes:} *** indicates significance at the 1\% level, ** at the 5\% level, and * at the 10\% level. All standard errors are clustered by plant. Management score, production worker average fixed effect, and manager average fixed effect are standardized. All columns control for industry. In addition, the indicated columns also control for state, private ownership, number of competitors, union share, firm age, share male, average work hours, share white, and whether the firm is a multinational. }
+	
+\end{table}
+
+\clearpage
+%\begin{landscape}
+\begin{table}
+	\caption{Firm FE vs people management}
+	\label{tab:zfe_ppl}
+	\small
+	\singlespace
+	\center
+\scalebox{0.9}{	
+	\input{../../data/analysis/output/tables/zfe_ppl.tex}} \\
+	~ \\
+	\tablenotes{\textbf{Notes:} *** indicates significance at the 1\% level, ** at the 5\% level, and * at the 10\% level. All standard errors are clustered by plant. Management score, production worker average fixed effect, and manager average fixed effect are standardized. All columns control for industry. In addition, the indicated columns also control for state, private ownership, number of competitors, union share, firm age, share male, average work hours, share white, and whether the firm is a multinational. }
+	
+\end{table}
+%\end{landscape}
+
+
+
+
+
+
+

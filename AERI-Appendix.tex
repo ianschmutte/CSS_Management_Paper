@@ -1,0 +1,138 @@
+% !TeX root = ./AER Insights.tex
+% Last updated:
+% 5 Aug 18 - CC
+%%%%%%%%%%% APPENDIX EXHIBITS
+
+% A. Empirical Setting Details \label{app:emp_setting} 
+% Table A.1 Summary stats for RAIS sample \label{tab:rais_sum}
+% Table A.2 Summary stats for RAIS-WMS match \label{tab:wms_summ}
+\section{Data Sources}
+\label{app:EmpiricalDetails}
+
+\subsection{The \emph{Rela\c{c}\~{a}o Anual de Informa\c{c}\~{o}es Sociais} (RAIS)}
+We use matched employer-employee data from Brazil's \emph{Rela\c{c}\~{a}o Anual de Informa\c{c}\~{o}es Sociais} (RAIS) for the period 2003-2013.
+The RAIS is an administrative census of all jobs in Brazil covered by a formal contract. Each year, the Brazilian Ministry of Labor and Employment (MTE) collects data from each establishment on every employment contract that was active during the calendar year. For businesses, reporting the data under RAIS is mandated by the constitution. Hence, compliance with reporting requirements is extremely high, as employers who fail to complete the survey face mandatory fines and also risk litigation from employees, to whom the company must make mandatory leave-loading and social security payments.
+
+For each job, in each year, the employer reports characteristics of the worker, the job, and the establishment. 
+Worker characteristics include gender, race, age, and educational attainment.\footnote{ 
+Because individual characteristics are reported by the employer, they can change as workers move from job to job. 
+\citet*{CRS:Race:JHR:2017} provide evidence that discrepancies in employers' reports of worker characteristics are associated with other unobserved determinants of earnings, so we leave these variables in as reported.} 
+Job characteristics relevant to this study include the monthly wage, weekly contracted hours, occupation, and the cause of job separations (which we use to distinguish voluntary and involuntary separations.) Establishment characteristics include the establishment's industry, location, and number of employees. 
+
+\subsection{Distinguishing Managers and Production Workers in RAIS}
+% [TO FINISH]
+In RAIS, We are able to distinguish workers holding managerial positions from production workers.
+Each contract-year observation includes a variable that reports the 5-digit occupation code according to the Brazilian classification system, the \emph{Classificaç{\~a}o Brasileira de Ocupaç{\~o}es} (CBO).\footnote{Detailed information on the CBO classification system is available via \href{http://www.mtecbo.gov.br}{http://www.mtecbo.gov.br}.} 
+Under the CBO, occupations with the first digit `1' correspond to  ``Membros superiores do poder p\'{u}blico, dirigentes de organiza\c{c}\~{o}es
+ de interesse p\'{u}blico e de empresas e gerentes'' (Leaders of public agencies, and directors and managers of organizations and businesses). We therefore classify as managerial all jobs with first digit of CBO code equal to 1.
+
+ We find that many of the establishments in RAIS do not have any workers in occupations classified as managerial according to the rule above. Hence, we expand our classification of managers in two ways.  We use the third digit of the occupation code, which indicates hierarchical level. Specifically, a third digit of `0` in the CBO code indicates the position is supervisory over the jobs in the corresponding two-digit group. For example, occupations classified with leading digits ``52'' are ``vendors of commerical services.'' Occupations with leading digits ``520'' are ``supervisors of vendors of commercial services.'' We classify all such supervisory occupations as managerial. %Second, in the WMS data, we know the survey respondent is a manager or director. While the WMS does not record the CBO occupation of the respondent, ... [TO FINISH]
+  
+   
+ 
+
+
+\subsection{Formal Employment in Brazil}
+In Brazil a worker is formally employed if he or she has a registered identification number with one of two social security programs: the \emph{Programa de Integra\c{c}\~{a}o Social} (PIS), or Social Integration Program, or the \emph{Programa de Forma\c{c}\~{a}o do Patrim\^{o}nio do Servidor P\'{u}blico} (PASEP), or Civil Servants Equity Formation Program, depending on whether the worker is employed in the private sector or the public sector. PIS/PASEP numbers are consistent across workers and follow a worker for life. For firms, formal employment means that the employer contributes the \textit{Abono Salarial} along with other social security payments to a bank account administered by either \emph{Caixa Econ\^{o}mica Federal} if registered with PIS, or \emph{Banco do Brasil} for PASEP workers. Formal employers must also have employment contracts for all employees. The most common contract type is the \emph{Consolida\c{c}\~{a}o das Leis de Trabalho} (CLT), or Labor Law Consolidation. Other formal employment relationships include internships, independent contracting, directorships and government contracts, but we do not consider these types of contract in this paper.
+% The Brazilian government defines formal employment with these criteria, and this definition is consistent with definitions used by researchers when studying other Latin American economies \citep{Gasparini2009}. 
+The number of formal contracts grew steadily in Brazil during our sample period, from nearly 42 million jobs in 2003 to over 72 million jobs in 2010. Unemployment decreased from eleven percent to five percent, and real wages grew over the period as well. Our sample therefore covers a period of growth and tightening labor-market conditions.
+
+\subsection{Preparation of the RAIS Analysis Data}
+\label{sec:RAIS_analysis_description}
+We base our analysis on an extract of the full RAIS data with several restrictions.
+For workers with multiple jobs in a given year, we focus on the job with the highest total earnings in that year, based on the reported number of months worked and the average monthly earnings.
+We also restrict attention to jobs with at least 30 hours contracted hours per week.
+Using this unbalanced panel of workers, we drop all observations in plants with fewer than five workers, and observations with missing data on tenure or earnings. 
+Finally, we drop all observations where the job is reported to be some form of government contract.
+
+Table \ref{tab:rais_sum} provides basic descriptive statistics summarizing our main analysis file assembled from the raw RAIS data.
+
+\section{Additional Details of the Firm-level Data}
+
+We show the distribution of the skill of managers and of production workers, as measured by the AKM worker effect, in Figure \ref{fig:pe_kdensity}.
+Managers clearly have much higher average skill, but also higher variance. The distribution of managerial skill is also highly skewed. The skill distribution for production workers is approximately log-normal. The distribution of manager skill has a very fat right-tail, indicating the presence of many highly-paid managers. Moreover, the distribution shows some evidence of being bi-modal.
+
+%\section{Details of Production Function Estimation}
+%[IN PROGRESS]
+% C. Production Function Estimation \label{app:prod_fn}
+% Table C.1 Summary stats for production data \label{tab:prod_stats}
+% Table C.2 Production function estimates \label{tab:prod_est}
+
+\clearpage
+\section{Appendix Tables and Figures}
+\input{../../../tables/RAIS_sum}
+\clearpage
+\begin{table}[h t]
+    \caption{ \label{tab:wms_summ}}
+    \begin{center}
+    \scalebox{0.7}{
+        \input{../../../tables/wms_sumstats}
+    }
+    \end{center}
+    \footnotesize{Notes: Summaries of the matched WMS-RAIS panel. The dataset is a firm-year panel with one observation for each WMS firm in each year it was surveyed
+    and can be matched to RAIS. There are 694 unique firms. Of these, 267 were surveyed in both years, 213 were surveyed only in 2008, and 214 were surveyed only in 2013. 
+    The data also include firm-level summaries of RAIS variables. Note that the WMS only asked Brazilian firms about gender composition in 2013, which explains the discrepancies in the
+    number of observations for those variables.}
+\end{table}
+
+\clearpage
+\input{../../../tables/dynamic_selection.tex}
+\clearpage
+\begin{figure}
+    \includegraphics[width = 0.9\textwidth]{../../../figures/mgmtscor_hist}
+    \caption{Distribution of overall management score (histogram) and people management score (kernel density) for Brazilian plants surveyed in 2008 or 2013.}
+    \label{fig:pe_kdensity}
+\end{figure}
+
+\clearpage
+\input{../../../tables/tab_WMS-RAIS-PIA-sumstats.tex}
+
+\clearpage
+\begin{figure}
+    \includegraphics[width=0.9\textwidth]{../../../IBGE/figs/cvb_fig5_zmanagement}
+    \caption{Relationship between sales and WMS management score}
+    \label{fig:sales_v_mgmt}
+\end{figure}
+
+\clearpage
+\begin{figure}
+    \includegraphics[width=0.9\textwidth]{../../../IBGE/figs/cvb_fig7a_sa}
+    \caption{Relationship between sales and estimated AKM firm effect}
+    \label{fig:sales_v_fe}
+\end{figure}
+
+\clearpage
+\begin{figure}
+    \includegraphics[width=0.9\textwidth]{../../../IBGE/figs/cvb_f6_zpe_mean_sa}
+    \caption{Relationship between sales and average estimated AKM worker effect}
+    \label{fig:sales_v_pe}
+\end{figure}
+
+\clearpage
+\begin{figure}
+    \includegraphics[width=0.9\textwidth]{../../../IBGE/figs/cvb_fig7a_sa}
+    \caption{Relationship between sales and estimated AKM firm effect}
+    \label{fig:sales_v_fe}
+\end{figure}
+
+
+\clearpage
+\input{../../../tables/tab_AKM_vardecomp}
+\clearpage
+\input{../../../tables/AKM_corr}
+
+\clearpage
+\begin{figure}
+    \includegraphics[width = 0.9\textwidth]{../../../figures/pe_kdensity}
+    \caption{Distribution of AKM Worker Fixed Effect for Managers and Nonmanagers}
+    \label{fig:pe_kdensity}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width = 0.9\textwidth]{../../../figures/fig_emp_shares_struc}
+    \caption{Employment shares in structured and unstructured firms}
+    \label{fig:emp_shares}
+\end{figure}
+
+
+

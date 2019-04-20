@@ -1,0 +1,15 @@
+% !TeX root = ./AER Insights.tex
+% Last updated:
+% 11 Apr 19 - CC
+
+Following \citet{Abowd1999}, the wage decomposition involves estimating a two-way, fixed-effects wage equation of the form
+%
+	\begin{equation}
+	\label{eq:AKM_full}
+	\ln y_{it} = \alpha + x_{it}\beta + \psi_{J(i,t)} + \theta_i 
+	         + \varepsilon_{it},
+	\end{equation}
+where $y_{it}$ is the wage of worker $i$ at time $t$.\footnote{For the wage variable we take average monthly earnings, reported in 2003 Brazilian Reais, and convert it into an hourly measure. The monthly earnings data can be thought of as measuring the contracted monthly wage, a common institutional arrangement in Brazil. We convert this to an hourly measure by dividing the monthly wage by contracted hours per week, and then by 4.17. When a worker is employed for 12 months, average monthly earnings is simply annual earnings divided by 12. When a worker is employed fewer than 12 months, the total earnings paid for the year are divided by the number of months worked; for partial months, the earnings are pro-rated to reflect what the worker would have earned for the entire month. All of these calculations are performed by the MTE and included in the raw RAIS data.} In our specification, $x_{it}$ contains a cubic in labor-market experience interacted with race and gender.\footnote{For workers whose first employment begins in 2003 or after, experience is the sum of all months they are reported in at least one active employment relationship. For workers whose first employment started prior to 2003, we approximate experience as the greater of potential experience (age-years of schooling-6) or tenure in the first observed job.}   The $\psi_{J(i,t)}$ are firm effects that reflect employer-specific wage premia paid by establishment $j=J(i,t)$, where $J(i,t)$ indicates worker $i$'s job in year $t$ and $\varepsilon_{it}$ is a mean-zero error. Our primary interest is in the worker effects, $\theta_i$, which capture the value of portable skills and represent our measure of worker quality. Under strict exogeneity of $\varepsilon_{it}$ with respect to $x_{it}$, $\theta_i$ and $\psi_{J(i,t)}$, least squares will produce unbiased estimates of the worker and firm effects.\footnote{However, as explained in \citet{Abowd1999}, this assumption rules out endogenous mobility.} 
+
+Similar to other settings --- for example, Germany \citep{Card2013}, Portugal \citep{Card:Bargaining:QJE:2016} and the US \citep{Abowd:EndMob:CES:2015} --- we find the AKM model provides a  thorough description of the sources of wage variation, with an $R^2$ above .90. Worker quality ($\hat\theta_i$) accounts for just under half of the total variation in log wages.  By contrast, the firm-specific component of pay ($\hat\psi_j$), explains $18.5$ percent. Table \ref{tab:AKM_vardecomp} and \ref{tab:AKM_corr} reports the canonical AKM variance decomposition and correlation tables.
+ 
